@@ -10,8 +10,8 @@ class Week extends Model
     use HasFactory;
     
     protected $fillable = [
-        'date',
-        'post_id'
+        'date'
+        
     ];
     
     public function post(){

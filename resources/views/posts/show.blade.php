@@ -19,7 +19,7 @@
         
         <h1 class='title'>『{{ $post->title }}』</h1>
         <br>
-        <h2 class='category'>{{ $post->category->name }}</h2>
+        <h2 class='category'>カテゴリー：{{ $post->category->name }}</h2>
         
         <!--レシピ投稿内容-->
         <div class='content'>
@@ -30,25 +30,46 @@
             <!--材料一覧-->
             <div class='content_post'>
                         
-                <h3>材料名</h3>
+                <h3>＜材料名＞</h3>
                         
                 <h3>{{ $post->amount}}</h3>
                         
-                <h3>価格</h3>
+                <h3>＜価格＞</h3>
                         
-                <h3>合計金額</h3>
+                <h3>＜合計金額＞</h3>
                         
-                <h3>{{ $post->reference }}</h3>
+                <h3>URL：{{ $post->reference }}</h3>
             </div>
             <br>
                     
             <div class='cook'>
-                <p　class='body'>{{ $post->make}}</p></p>
+                <p　class='body'>作り方：『{{ $post->make}}』</p></p>
+                <br>
+                <br>
             </div>
         </div>
+        <div class='edit'>
+            <a href="/posts/{{ $post->id }}/edit">編集する️</a>
+        </div>
+        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+            @csrf
+            @method('DELETE')
+            <div class='delete'>
+                <button type="button" onclick="deletePost({{ $post->id }})">削除する</button>
+            </div>
+        </form>
         <div class='footer'>
             <a href="/">◀戻る️</a>
         </div>
+        <script>
+            function deletePost(id) {
+                'use strict';
+        
+                if (confirm('削除すると復元できません。\n本当に削除しますか。')) {
+                    document.getElementById(`form_${id}`).submit();
+                }
+            }
+        </script>
     </body>
     </x-app-layout>
 </html>
