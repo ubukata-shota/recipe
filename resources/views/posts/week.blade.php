@@ -25,7 +25,9 @@
             ?></h2>
             @foreach($weeks as $day1)
                 @if($day1->date === date("Y-m-d"))
-                    <a href="/posts/{{ $day1->post->id }}"><h2>{{ $day1->post->title }}</h2></a>
+                    @if($day1->post && $day1->post->id)
+                        <a href="/posts/{{ $day1->post->id }}"><h2>{{ $day1->post->title }}</h2></a>
+                    @endif
                 @endif
             @endforeach
             <br>
@@ -36,7 +38,9 @@
             ?></h2>
             @foreach($weeks as $day2)
                 @if($day2->date === date("Y-m-d", strtotime("+1 day")))
-                    <a href="/posts/{{ $day2->post->id }}"><h2>{{ $day2->post->title }}</h2></a>
+                    @if($day2->post && $day2->post->id)
+                        <a href="/posts/{{ $day2->post->id }}"><h2>{{ $day2->post->title }}</h2></a>
+                    @endif
                 @endif
             @endforeach
             <br>
@@ -47,7 +51,9 @@
             ?></h2>
             @foreach($weeks as $day3)
                 @if($day3->date === date("Y-m-d", strtotime("+2 day")))
-                    <a href="/posts/{{ $day3->post->id }}"><h2>{{ $day3->post->title }}</h2></a>
+                    @if($day3->post && $day3->post->id)
+                        <a href="/posts/{{ $day3->post->id }}"><h2>{{ $day3->post->title }}</h2></a>
+                    @endif
                 @endif
             @endforeach
             <br>
@@ -58,7 +64,9 @@
             ?></h2>
             @foreach($weeks as $day4)
                 @if($day4->date === date("Y-m-d", strtotime("+3 day")))
-                    <a href="/posts/{{ $day4->post->id }}"><h2>{{ $day4->post->title }}</h2></a>
+                    @if($day4->post && $day4->post->id)
+                        <a href="/posts/{{ $day4->post->id }}"><h2>{{ $day4->post->title }}</h2></a>
+                    @endif
                 @endif
             @endforeach
             <br>
@@ -70,7 +78,9 @@
             ?></h2>
             @foreach($weeks as $day5)
                 @if($day5->date === date("Y-m-d", strtotime("+4 day")))
-                    <a href="/posts/{{ $day5->post->id }}"><h2>{{ $day5->post->title }}</h2></a>
+                    @if($day5->post && $day5->post->id)
+                        <a href="/posts/{{ $day5->post->id }}"><h2>{{ $day5->post->title }}</h2></a>
+                    @endif
                 @endif
             @endforeach
             <br>
@@ -81,7 +91,9 @@
             ?></h2>
             @foreach($weeks as $day6)
                 @if($day6->date === date("Y-m-d", strtotime("+5 day")))
-                    <a href="/posts/{{ $day6->post->id }}"><h2>{{ $day6->post->title }}</h2></a>
+                    @if($day6->post && $day6->post->id)
+                        <a href="/posts/{{ $day6->post->id }}"><h2>{{ $day6->post->title }}</h2></a>
+                    @endif
                 @endif
             @endforeach
             <br>
@@ -92,7 +104,9 @@
             ?></h2>
             @foreach($weeks as $day7)
                 @if($day7->date === date("Y-m-d", strtotime("+6 day")))
-                    <a href="/posts/{{ $day7->post->id }}"><h2>{{ $day7->post->title }}</h2></a>
+                    @if($day7->post && $day7->post->id)
+                        <a href="/posts/{{ $day7->post->id }}"><h2>{{ $day7->post->title }}</h2></a>
+                    @endif
                 @endif
             @endforeach
             

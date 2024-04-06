@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //以下に挿入したいデータのseederを入れる
-        $this->call(PostSeeder::class);
+        $this->call(CategorySeeder::class);
     }
 }

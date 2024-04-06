@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-                'name' => 'イタリアン',
+                'name' => 'その他',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
          ]);
