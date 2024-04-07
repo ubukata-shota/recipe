@@ -26,30 +26,42 @@
             <br>
                     
             <!--写真投稿-->
+            
                     
             <!--材料一覧-->
             <div class='content_post'>
                         
+                <!--材料表示機能　途中-->
                 <h3>＜材料名＞</h3>
+                    @foreach($ingredients as $ingredient) 
+                        @if($ingredient->post_id === $post->id)
+                            <h2>{{ $ingredient->name }}</h2>
+                        @endif
+                    @endforeach
+                <!--以上-->
                         
-                <h3>{{ $post->amount}}</h3>
+                <!--<h3>{{ $post->amount}}</h3>-->
                         
                 <h3>＜価格＞</h3>
+                
                         
                 <h3>＜合計金額＞</h3>
-                        
-                <h3>URL：{{ $post->reference }}</h3>
+                
+                <h2>＜URL＞</h2>        
+                <h3>{{ $post->reference }}</h3>
             </div>
             <br>
-                    
+            
+            <!--作り方-->        
             <div class='cook'>
-                <p　class='body'>作り方：『{{ $post->make}}』</p></p>
+                <h2>＜作り方＞</h2>
+                <p　class='body'>『{{ $post->make}}』</p></p>
                 <br>
                 <br>
             </div>
         </div>
         <div class='edit'>
-            <a href="/posts/{{ $post->id }}/edit">編集する️</a>
+            <a href="/posts/{{ $post->id }}/edit">変更する️</a>
         </div>
         <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
             @csrf

@@ -29,6 +29,10 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
     
+    public function ingredient(){
+        return $this->belongsTo(Ingredient::class);
+    }
+    
     public function weeks(){
         return $this->hasMany(Week::class);
     }

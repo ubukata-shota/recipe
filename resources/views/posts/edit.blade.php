@@ -7,7 +7,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+        
     </head>
     
     <x-app-layout>
@@ -36,6 +36,20 @@
                 <p class="category__error" style="color:red">{{ $errors->first('category') }}</p>
             </div>
             
+            <!--材料編集機能　追加途中-->
+            <div class="ingredient">
+            @foreach($ingredients as $index => $ingredient)
+                @if($ingredient->post_id == $post->id)
+                    <div id="ingredient{{ $index }}">
+                        <input type="text" name="ingredient[{{ $index }}][name]" value="{{ $ingredient->name }}">
+                        <button type="button" onclick="removeIngredient('ingredient{{ $index }}')">削除</button>
+                    </div>
+                @endif
+            @endforeach
+            </div>
+            <button type="button" onclick="addIngredient()">追加</button>
+            <!--材料編集機能　追加途中-->
+            
             <div class="make">
                 <h2>作り方</h2>
                 <textarea name="post[make]" placeholder="作り方を入力">{{ old('post.make', $post->make) }}</textarea>
@@ -63,6 +77,23 @@
             <br>
             <a href="/posts/{{ $post->id }}">◀️戻る️</a>
         </div>
+            <script>
+                var ingredientCount = 1;
+                
+                function addIngredient() {
+                ingredientCount ++;
+                var inputFields = document.querySelector(".ingredient");
+                var newInput = document.createElement("div");
+                newInput.id = "ingredient" + ingredientCount;
+                newInput.innerHTML = '<input type="text" name="ingredient[' + ingredientCount + '][name]"> <button type="button" onclick="removeIngredient(\'ingredient' + ingredientCount + '\')">削除</button>';
+                inputFields.appendChild(newInput);
+            }
+                
+                function removeIngredient(id) {
+                    var element = document.getElementById(id);
+                    element.parentNode.removeChild(element);
+                }
+            </script>
     </body>
     </x-app-layout>
 </html>
