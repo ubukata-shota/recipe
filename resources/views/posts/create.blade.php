@@ -17,6 +17,7 @@
     
     <body class="antialiased">
         <h1>新しいレシピの投稿</h1>
+        <br>
         <form action="/posts" method="POST">
             @csrf
             
@@ -38,12 +39,24 @@
                 <p class="category__error" style="color:red">{{ $errors->first('category') }}</p>
             </div>
             
+            <!--材料投稿機能追加中-->
+            <h2>必要な材料</h2>
+            <div id="ingredient">
+                <div id="ingredient1">
+                    <input type="text" name="ingredient[0][name]">
+                    <button type="button" onclick="removeIngredient('ingredient1')">削除</buttion>
+                </div>
+            </div>
+            <button type="button" onclick="addIngredient()">追加</button>
+            <!---->
+            
             <div class="make">
                 <h2>作り方</h2>
                 <textarea class="make_content" name="post[make]" placeholder="作り方を入力">
                     <?php
                         echo "\nstep1\n\nstep2\n\nstep3\n\nstep4\n\nstep5";
-                    ?></textarea>
+                    ?>
+                </textarea>
                 <p class="make__error" style="color:red">{{ $errors->first('post.make') }}</p>
             </div>
             
@@ -64,6 +77,29 @@
             <br>
             <a href="/">◀️戻る️</a>
         </div>
+        
+        <!--材料投稿機能追加中-->
+            <script>
+                var ingredientCount = 1;
+                
+                function addIngredient() {
+                    ingredientCount ++;
+                    var inputFields = document.getElementById("ingredient");
+                    var newInput = document.createElement("div");
+                    newInput.id = "ingredient" + ingredientCount;
+                    newInput.innerHTML = '<input type="text" name="ingredient[' + ingredientCount + '][name]"> <button type="button" onclick="removeIngredient(\'ingredient' + ingredientCount + '\')">削除</button>';
+                    inputFields.appendChild(newInput);
+                    
+                }
+                
+                function removeIngredient(id) {
+                    var element = document.getElementById(id);
+                    element.parentNode.removeChild(element);
+                }
+            </script>
+        <!---->
     </body>
+    
+    
     </x-app-layout>
 </html>

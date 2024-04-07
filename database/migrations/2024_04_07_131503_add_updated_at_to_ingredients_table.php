@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('weeks', function (Blueprint $table) {
-            $table->id();
-            $table->date("04月04日");
-            $table->post_id("1");
-            $table->timestamps();
+        Schema::table('ingredients', function (Blueprint $table) {
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('weeks');
+        Schema::table('ingredients', function (Blueprint $table) {
+            $table->dropColumn('updated_at');
+        });
     }
 };
