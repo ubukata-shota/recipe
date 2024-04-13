@@ -1,0 +1,22 @@
+.container {
+    text-align: center;
+}
+.image {
+    margin: 0 auto;
+    width: 80%;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+.underline {
+    border-bottom: 1px solid black;
+}
+.title {
+    font-size: 24px;
+}

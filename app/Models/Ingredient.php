@@ -12,7 +12,9 @@ class Ingredient extends Model
     use SoftDeletes;
     
     protected $fillable = [
-        'name'
+        'name',
+        'unit_amount',
+        'unit_price'
         ];
     
     public function post(){
