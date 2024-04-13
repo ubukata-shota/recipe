@@ -7,6 +7,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/show.css') }}">
 
     </head>
     
@@ -16,62 +17,84 @@
     </x-slot>
     
     <body class="antialiased">
-        
-        <h1 class='title'>『{{ $post->title }}』</h1>
-        <br>
-        <h2 class='category'>カテゴリー：{{ $post->category->name }}</h2>
-        
-        <!--レシピ投稿内容-->
-        <div class='content'>
-            <br>
-                    
-            <!--写真投稿-->
             
-                    
-            <!--材料一覧-->
-            <div class='content_post'>
-                        
-                <!--材料表示機能　途中-->
-                <h3>＜材料名＞</h3>
-                    @foreach($ingredients as $ingredient) 
-                        @if($ingredient->post_id === $post->id)
-                            <h2>{{ $ingredient->name }}</h2>
-                        @endif
-                    @endforeach
-                <!--以上-->
-                        
-                <!--<h3>{{ $post->amount}}</h3>-->
-                        
-                <h3>＜価格＞</h3>
-                
-                        
-                <h3>＜合計金額＞</h3>
-                
-                <h2>＜URL＞</h2>        
-                <h3>{{ $post->reference }}</h3>
+        <div class='content'>
+            
+            <!--タイトル、写真、カテゴリー-->
+            <div class="title">
+                <h1>『{{ $post->title }}』</h1>
             </div>
-            <br>
+            
+            <div class="image">
+                <img src="{{ asset( $post->image) }}" alt="Post Image">
+            </div>
+            
+            <div class='category'>
+                <h2>カテゴリー：{{ $post->category->name }}</h2>
+            </div>
+            
+            <!--レシピ投稿内容-->
+            <!--材料関連-->
+            <div class='content_post'>
+                <div class="ingredient">
+                    <h3>＜材料名＞</h3>
+                        @foreach($ingredients as $ingredient) 
+                            @if($ingredient->post_id === $post->id)
+                                <li class="content">
+                                    @if($ingredient->name)
+                                        {{ $ingredient->name }}
+                                    @endif
+                                    @if($ingredient->unit_amount)
+                                        {{ $ingredient->unit_amount }}
+                                    @endif
+                                    @if($ingredient->unit_price)
+                                        {{ $ingredient->unit_price }}円
+                                    @endif
+                                </li>
+                            @endif
+                        @endforeach
+                        
+                    <div class="sum_price">        
+                    <h3>＜合計金額＞</h3>
+                        <?php 
+                            $total_price = 0;
+                            foreach($ingredients as $ingredient)
+                                if($ingredient->post_id === $post->id && $ingredient->unit_price)
+                                    $total_price += $ingredient->unit_price;
+                        ?>
+                        {{ $total_price }}円
+                    </div>
+                </div>
+                
+                
+            </div>
             
             <!--作り方-->        
             <div class='cook'>
                 <h2>＜作り方＞</h2>
-                <p　class='body'>『{{ $post->make}}』</p></p>
-                <br>
-                <br>
+                <p　class='body'>『{{ $post->make}}』</p>
             </div>
-        </div>
-        <div class='edit'>
-            <a href="/posts/{{ $post->id }}/edit">変更する️</a>
-        </div>
-        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
-            @csrf
-            @method('DELETE')
-            <div class='delete'>
-                <button type="button" onclick="deletePost({{ $post->id }})">削除する</button>
+            
+            <div class="reference">   
+                <h2>＜URL＞</h2>        
+                <h3>{{ $post->reference }}</h3>
             </div>
-        </form>
-        <div class='footer'>
-            <a href="/">◀戻る️</a>
+            
+        
+            <div class='edit'>
+                <a class="button" href="/posts/{{ $post->id }}/edit">変更する️</a>
+            </div>
+            
+            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                @csrf
+                @method('DELETE')
+                <div class='delete'>
+                    <button class="button button_delete" type="button" onclick="deletePost({{ $post->id }})">削除する</button>
+                </div>
+            </form>
+            <div class='footer'>
+                <a href="/">◀戻る️</a>
+            </div>
         </div>
         <script>
             function deletePost(id) {

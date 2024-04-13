@@ -7,20 +7,24 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/post.css') }}">
         
     </head>
     
     <x-app-layout>
     <x-slot name="header">
-        　<p>レシピ一覧</p>
+        　<p>レシピを編集</p>
     </x-slot>
     
     <body class="antialiased">
         <h1>レシピの編集</h1>
-        <form action="/posts/{{ $post->id }}" method="POST">
+        <form action="/posts/{{ $post->id }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method("PUT")
+            
             <!--以下入力項目-->
+            <input type="file" name="image" value="{{ old('post.image', $post->image) }}">
+            
             <div class="title">
                 <h2>料理名</h2>
                 <input type="text" name=post[title] placeholder="料理名を入力" value="{{ old('post.title', $post->title) }}">
@@ -36,22 +40,22 @@
                 <p class="category__error" style="color:red">{{ $errors->first('category') }}</p>
             </div>
             
-            <!--材料編集機能　追加途中-->
-            <div class="ingredient">
+            <div class="ingredient_content" id="ingredient">
             @foreach($ingredients as $index => $ingredient)
                 @if($ingredient->post_id == $post->id)
-                    <div id="ingredient{{ $index }}">
-                        <input type="text" name="ingredient[{{ $index }}][name]" value="{{ $ingredient->name }}">
-                        <button type="button" onclick="removeIngredient('ingredient{{ $index }}')">削除</button>
+                    <div id="ingredient{{ $index }}" class="ingredient_container">
+                        <input type="text" name="ingredient[{{ $index }}][name]" value="{{ $ingredient->name }}" placeholder="材料名を入力">
+                        <input class="ingredient_text" type="number" name="ingredient_1[{{ $index }}][unit_amount]" value="{{ $ingredient->unit_amount }}" placeholder="量を入力">
+                        <input class="ingredient_text" type="number" name="ingredient_2[{{ $index }}][unit_price]" value="{{ $ingredient->unit_price }}" placeholder="金額を入力">
+                        <button class="button delete" type="button" onclick="removeIngredient('ingredient{{ $index }}')">削除</button>
                     </div>
                 @endif
             @endforeach
             </div>
-            <button type="button" onclick="addIngredient()">追加</button>
-            <!--材料編集機能　追加途中-->
+            <button class="button common ingredient_content" type="button" onclick="addIngredient()">追加</button>
             
+            <h2>作り方</h2>
             <div class="make">
-                <h2>作り方</h2>
                 <textarea name="post[make]" placeholder="作り方を入力">{{ old('post.make', $post->make) }}</textarea>
                 <p class="make__error" style="color:red">{{ $errors->first('post.make') }}</p>
             </div>
@@ -70,7 +74,7 @@
                 <input type="date" name="week[date]" value="{{ $date }}">
             </div>
             
-            <input type="submit" value="更新する">
+            <input class="button common" type="submit" value="更新する">
         </form>
         
         <div class='footer'>
@@ -82,10 +86,10 @@
                 
                 function addIngredient() {
                 ingredientCount ++;
-                var inputFields = document.querySelector(".ingredient");
+                var inputFields = document.querySelector(".ingredient_content");
                 var newInput = document.createElement("div");
                 newInput.id = "ingredient" + ingredientCount;
-                newInput.innerHTML = '<input type="text" name="ingredient[' + ingredientCount + '][name]"> <button type="button" onclick="removeIngredient(\'ingredient' + ingredientCount + '\')">削除</button>';
+                newInput.innerHTML = '<div id="ingredient{{ $index }}" class="ingredient_container"><input class="ingredient_text" type="text" name="ingredient[' + ingredientCount + '][name]" placeholder="材料名を入力">  <input class="ingredient_text" type="number" name="ingredient_1[' + ingredientCount + '][unit_amount]" placeholder="量を入力"><input class="ingredient_text" type="number" name="ingredient_2[' + ingredientCount + '][unit_price]" placeholder="金額を入力"><button class="button delete" type="button" onclick="removeIngredient(\'ingredient' + ingredientCount + '\')">削除</button></div>';
                 inputFields.appendChild(newInput);
             }
                 

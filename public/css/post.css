@@ -1,0 +1,54 @@
+@charset "utf-8";
+textarea {
+    width: 95%; /* テキストエリアの幅 */
+    height: 200px; /* テキストエリアの高さ */
+    
+    
+}
+
+.make {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredient_content {
+    text-align: center; /* テキストボックスとボタンを中央に配置する */
+}
+
+.ingredient_container input[type="text"],
+.ingredient_container input[type="number"] {
+    width: 130px; /* インプットの幅を調整 */
+    margin-right: 5px; /* インプット間の間隔を調整 */
+}
+
+.ingredient_text {
+    margin: 5px 5px; /* 上下20px、左右は自動で中央に配置 */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    
+}
+
+.delete {
+    background-color: #ff6347;
+    padding: 5px 10px;
+}
+
+.image {
+    width: 240px;
+    height: 240px;
+}
