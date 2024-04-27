@@ -2,10 +2,30 @@
 /*    background-color:	#CCCC99	;*/
 /*    font-family: sans-serif;*/
 /*}*/
+
+.pattern  {
+   background-color: rgba(255, 208, 15, 0.34);
+   background-image:
+   radial-gradient(#ffd00f 1px, transparent 1px);
+   background-size: 20px 20px;
+}
+
+h1 {
+	display: inline;
+	font-size: 40px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, #e69f0f 70%);
+}
 .title {
     font-size: 24px;
+    font-weight: bold;
     text-align: center;
-    background-color: #DDDDDD	;
+    display: flex;
+    justify-content: center;
+}
+
+.user {
+    text-align: center;
+    font-weight: bold;
 }
 
 .image {
@@ -23,44 +43,145 @@
 }
 
 .category {
-    text-align:center;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
+    margin-top: 8px;
+    margin-left: 5px;
 }
-
-.ingredient {
-    border: 2px solid #000;
-    border-radius: 4px;
-    padding: 10px;
-}
-
-
 
 .content_post {
-    text-align:center;
     font-weight: bold;
+    border: dashed 2px;/*破線*/
+    border-radius: 9px;
+    margin-top:5px;
+    margin-left: 10px;/*はみ出ないように調整*/
+    margin-right: 10px;/*はみ出ないように調整*/
+    padding: 0.5em 0.5em 0.5em 2em;
 }
 
 .reference {
     margin-bottom: 40px;
+    overflow-wrap: break-word;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+}
 
 .button {
-    padding: 10px 10px;
-    font-size: 17px;
+    position: relative;
+    display: inline-block;
     font-weight: bold;
-    color: black;
-    border: 2px solid #4CAF50;
-    background-color:white; 
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-top: 20px; /* 上部の余白を増やす */
-    margin-bottom: 20px; /* 下部の余白を増やす */
+    padding: 8px 10px 5px 10px;
+    text-decoration: none;
+    color: #FFA000;
+    background: #fff1da;
+    border-bottom: solid 4px #FFA000;
+    border-radius: 15px;
+    transition: .4s;
+    margin-top: 10px;
+    margin-right: 10px; /* ボタン間の余白を設定する場合 */
+    margin-bottom: 80px;
+}
+
+.button:hover {
+  background: #ffc25c;
+  color: #FFF;
 }
 
 .button_delete { 
-    padding: 7px 10px;
-    border: 2px solid #ff6347;
+    color: red;
+    border-bottom: solid 4px red;
+}
+
+.ribbon1 {
+  position: absolute;
+  top: -20px; /* リボンを上にずらす */
+  left: 20px;
+  display: inline-block;
+  height: 40px; /* リボンの高さ */
+  line-height: 40px; /* リボンの高さ */
+  text-align: center;
+  font-weight: bold;
+  padding: 0 20px; /* 横の大きさ */
+  font-size: 16px; /* 文字の大きさ */
+  background: #e69f0f; /* 塗りつぶし色 */
+  color: black; /* 文字色 */
+  box-sizing: border-box;
+  z-index: 2; /* リボンをテキストの上に配置 */
+}
+
+
+.ribbon1:before, .ribbon1:after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
+}
+
+.ribbon1:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+
+.ribbon1:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  right: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-left: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+
+.box25 {
+  position: relative;
+  background: #fff0cd;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px #e69f0f;
+  width: 90%; /* 幅を画面の70%に設定 */
+  margin: 20px auto; /* 上下のマージンを追加して中央に配置 */
+  padding: 40px 0.5em 0.2em; /* 上部にリボンの高さ分の余白を追加 */
+  color: #454545;
+  margin-top:30px;
+  margin-bottom:50px;
+}
+.box25:after{
+    position: absolute;
+    content: '';
+    right: -7px;
+    top: -7px;
+    border-width: 0 15px 15px 0;
+    border-style: solid;
+    border-color: #ffdb88 rgba(255, 208, 15, 0.15) #ffdb88;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.box25 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.sum_price {
+    text-align: center;
+}
+
+.sum {
+    text-decoration: underline white double;
+}
+
+.url {
+    color: #007bff;
+    text-decoration: underline #007bff;
+}
+
+.return {
+    display: flex;
+    justify-content: center;
 }

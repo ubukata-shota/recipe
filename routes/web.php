@@ -15,6 +15,15 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::delete('/posts/{post}', [PostController::class, 'delete']);
 
+Route::get('/buy', [PostController::class, 'buy'])->name('buy');
+Route::get('/makelist', [PostController::class, 'makeList'])->name('makelist');
+Route::post('/makelist', [PostController::class, 'storelist']);
+Route::get('/search', [PostController::class, 'search'])->name('search');
+
+Route::get('/posts/{post}/menu', [PostController::class, 'menu'])->name('menu');
+Route::post('/posts/{post}/menu', [PostController::class, 'storemenu'])->name('storemenu');
+Route::delete('/weeks/{id}', [PostController::class, 'deleteWeek'])->name('weeks.delete');
+
 //以上自分で書いたコード
 
 Route::get('/dashboard', function () {

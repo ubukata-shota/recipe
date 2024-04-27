@@ -1,37 +1,42 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 header_top">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                    <a href="{{ route('index') }}">
+                        <img src="{{ asset( 'storage//5UxZyWKY1gF5qQCesqdveEgxB37ktcrY63RXn4VN.png' ) }}" width="45" height="45">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    
-                    <x-nav-link :href="route('week')" :active="request()->routeIs('week')">
-                        {{ __('一週間の献立') }}
-                    </x-nav-link>
-                　　
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
-                        {{ __('レシピ一覧') }}
+                        <p class="title_top">{{ __('レシピ一覧') }}</p>
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('week')" :active="request()->routeIs('week')">
+                        <p class="title_top">{{ __('一週間の献立') }}</p>
                     </x-nav-link>
-                    
+                    <x-nav-link :href="route('buy')" :active="request()->routeIs('buy')">
+                        <p class="title_top">{{ __('買い物リスト') }}</p>
+                    </x-nav-link>
+                    <!--<x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">-->
+                    <!--    {{ __('Dashboard') }}-->
+                    <!--</x-nav-link>-->
+                    <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
+                        <p class="title_top post_recipe">{{ __('レシピを投稿') }}</p>
+                    </x-nav-link>
                 </div>
+                
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-100 bg-yellow-500 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 side_button">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
@@ -44,7 +49,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('プロフィール') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -54,7 +59,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('ログアウト') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -75,11 +80,11 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
+        <!--<div class="pt-2 pb-3 space-y-1">-->
+        <!--    <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">-->
+        <!--        {{ __('Dashboard') }}-->
+        <!--    </x-responsive-nav-link>-->
+        <!--</div>-->
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -89,8 +94,23 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                <x-responsive-nav-link :href="route('create')" class="title_top post_recipe">
+                    {{ __('レシピを投稿') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('index')" class="title_top">
+                    {{ __('レシピ一覧') }}
+                </x-responsive-nav-link>
+                
+                <x-responsive-nav-link :href="route('week')" class="title_top">
+                    {{ __('一週間の献立') }}
+                </x-responsive-nav-link>
+                
+                <x-responsive-nav-link :href="route('buy')" class="title_top">
+                    {{ __('買い物リスト') }}
+                </x-responsive-nav-link>
+                
+                <x-responsive-nav-link :href="route('profile.edit')" class="title_top">
+                    {{ __('プロフィール') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
@@ -100,7 +120,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('ログアウト') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

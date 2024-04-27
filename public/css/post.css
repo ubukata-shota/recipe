@@ -1,9 +1,44 @@
 @charset "utf-8";
+
+.pattern  {
+    background-color: rgba(255, 208, 15, 0.34);
+    background-image:
+       radial-gradient(#ffd00f 1px, transparent 1px);
+    background-size: 20px 20px;
+    height: 100%; /* 高さを100%に設定 */        
+    width: 100%; /* 幅を100%に設定 */
+    overflow: hidden;
+}
+
+.user {
+    text-align: center;
+}
+
+.input_image {
+   margin-left: 20px; 
+   margin-top: 20px
+}
+.list_content{
+    margin-left: 20px; 
+}
+
+.title {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.input {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
 textarea {
     width: 95%; /* テキストエリアの幅 */
     height: 200px; /* テキストエリアの高さ */
-    
-    
+}
+
+.reference {
+    width: 95%;
 }
 
 .make {
@@ -14,7 +49,9 @@ textarea {
 
 .ingredient_content {
     text-align: center; /* テキストボックスとボタンを中央に配置する */
+    
 }
+
 
 .ingredient_container input[type="text"],
 .ingredient_container input[type="number"] {
@@ -30,25 +67,139 @@ textarea {
     border-radius: 5px;
 }
 
-.button {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #4CAF50;
-    border: 1px solid #000;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    
+.button-container {
+    display: flex;
+    justify-content: center;
 }
 
-.delete {
-    background-color: #ff6347;
-    padding: 5px 10px;
+.button {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 10px 5px 10px;
+    text-decoration: none;
+    color: #FFA000;
+    background: #fff1da;
+    border-bottom: solid 4px #FFA000;
+    border-radius: 15px;
+    transition: .4s;
+    margin:10px 20px 20px 10px;
+}
+
+.button:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
+
+.delete { 
+    color: red;
+    border-bottom: solid 4px red;
+}
+
+
+.add_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_list {
+    text-align: center;
+    margin-top: 20px;
+    
 }
 
 .image {
     width: 240px;
     height: 240px;
 }
+
+.ribbon1 {
+  position: absolute;
+  top: -20px; /* リボンを上にずらす */
+  left: 20px;
+  display: inline-block;
+  height: 40px; /* リボンの高さ */
+  line-height: 40px; /* リボンの高さ */
+  text-align: center;
+  font-weight: bold;
+  padding: 0 20px; /* 横の大きさ */
+  font-size: 16px; /* 文字の大きさ */
+  background: #e69f0f; /* 塗りつぶし色 */
+  color: black; /* 文字色 */
+  box-sizing: border-box;
+  z-index: 2; /* リボンをテキストの上に配置 */
+}
+
+
+.ribbon1:before, .ribbon1:after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
+}
+
+.ribbon1:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+
+.ribbon1:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  right: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-left: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+
+.box25 {
+  position: relative;
+  background: #fff0cd;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px #e69f0f;
+  width: 90%; /* 幅を画面の70%に設定 */
+  margin: 20px auto; /* 上下のマージンを追加して中央に配置 */
+  padding: 40px 0.5em 0.2em; /* 上部にリボンの高さ分の余白を追加 */
+  color: #454545;
+  margin-top:30px;
+  margin-bottom:50px;
+}
+.box25:after{
+    position: absolute;
+    content: '';
+    right: -7px;
+    top: -7px;
+    border-width: 0 15px 15px 0;
+    border-style: solid;
+    border-color: #ffdb88 rgba(255, 208, 15, 0.15) #ffdb88;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.box25 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.ingredient_name {
+    display: inline;
+	font-size: 20px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, #e69f0f 70%);
+}
+
+.post_title {
+    display: inline;
+	font-size: 20px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, #e69f0f 70%);
+}
+
+.list {
+    margin-bottom:1000px;
+}
+

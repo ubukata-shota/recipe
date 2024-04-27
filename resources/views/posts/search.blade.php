@@ -11,34 +11,32 @@
     <x-app-layout>
     <x-slot name="header">
         <div class="header">
-        　<p>～レシピ一覧～</p>
+        　<p>～検索結果～</p>
         </div>
     </x-slot>
     
     <body class="antialiased">
-        
         <div class="pattern">
-            
-        <br>
+        <br>    
         <div class="some_input">
-            <form class="search_title" action="{{ route('search') }}" method="GET">
+            <form class="search_container" action="{{ route('search') }}" method="GET">
                 <input type="text" name="post[title]" placeholder="タイトルで検索">
                 <button class="search_button" type="submit">検索</button>
             </form>
+           
         </div>
         
         
         <!--レシピ投稿一覧-->
-        <div class='container'>
-            @foreach($posts as $post)
-                <!--タイトル表示-->
+        @if($posts->count() > 0)
+            
+            <ul>
+                @foreach($posts as $post)
+                    <!--タイトル表示-->
                 <div class="title">
                     <a href="/posts/{{ $post->id }}">
                         <h1 class='title'>『{{ $post->title }}』</h2>
                     </a>
-                    @if($post->user)
-                        <p class="user">作った人：{{ $post->user->name }}</p>
-                    @endif
                 </div>
                 <!--写真表示-->
                 <div class="image">
@@ -50,8 +48,15 @@
                         @endif
                     </a>
                 </div>
-            @endforeach
-        </div>
+                @endforeach
+            </ul>
+        @else
+            <p class="result">検索結果はありません。</p>
+            <img class="no_result" src="{{ asset( "storage/WStqSD6FwTUe2xCssDUoiXUmdjA94mHUMGDP3LdR.png" ) }}" alt="Post Image">
+        @endif
+
+<!-- ページネーションリンク -->
+{{ $posts->links() }}
         <!--<div class="footer">-->
             
         <!--</div>-->
