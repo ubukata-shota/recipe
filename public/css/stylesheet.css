@@ -1,0 +1,58 @@
+.sem-header {
+    background-color: rgba(255, 208, 15, 0.4);
+    font-family:monospace;
+    text-align:center;
+    font-size:20px;
+    font-weight: bold;
+    padding-bottom:20px;
+    border-top: 2px solid #000000;
+    border-bottom: 2px dotted #000000;
+}
+
+.header_top {
+    background-color: rgba(238, 202, 74, 0.7);
+}
+
+.title_top {
+    font-size:15px;
+    font-family:monospace;
+}
+
+.title_top::first-letter {
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFA000;
+    
+}
+
+.side_button {
+    background-color:#eb8000;;
+}
+
+.post_recipe::first-letter {
+    color: red;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+
+.new_create {
+    margin: 10px;
+}
+
+.pattern  {
+    background-color: rgba(255, 208, 15, 0.34);
+    background-image:
+       radial-gradient(#ffd00f 1px, transparent 1px);
+    background-size: 20px 20px;
+    height: 100%; /* 高さを100%に設定 */        
+    width: 100%; /* 幅を100%に設定 */
+    overflow: hidden;
+}

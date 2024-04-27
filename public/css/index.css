@@ -1,22 +1,149 @@
+
+.pattern  {
+   background-color: rgba(255, 208, 15, 0.34);
+   background-image:
+   radial-gradient(#ffd00f 1px, transparent 1px);
+   background-size: 20px 20px;
+}
+
 .container {
     text-align: center;
 }
+
+.user {
+    font-size: 15px;
+}
+
+.result {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.no_result {
+    max-width: 150px; /* 画像の最大幅を指定 */
+    max-height: 150px; /* 画像の最大高さを指定 */
+    display: block; /* 画像をブロック要素として扱います */
+    margin: 0 auto; /* 左右のマージンを自動で調整して中央に配置します */
+}
+
+input[type="text"] {
+        background-color: #f2f2f2; /* 好きな色に変更してください */
+        /* その他のスタイルを追加できます */
+}
+
 .image {
     margin: 0 auto;
-    width: 80%;
+    width: 75%;
     height: 350px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom:20px;
 }
 .image img {
     max-width: 100%;
     height: auto;
 }
+.image_week {
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:20px;
+}
 .underline {
     border-bottom: 1px solid black;
 }
+h1 {
+	display: inline;
+	font-size: 26px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, #e69f0f 70%);
+}
 .title {
     font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 10px 5px 10px;
+    text-decoration: none;
+    color: #FFA000;
+    background: #fff1da;
+    border-bottom: solid 4px #FFA000;
+    border-radius: 15px;
+    transition: .4s;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right: 10px; /* ボタン間の余白を設定する場合 */
+}
+
+.button:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
+
+.footer {
+    background-color:rgba(255, 208, 15, 0.5);
+    height:100px;
+}
+
+.some_input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+
+
+.search_button {
+    color: #fff;
+  background-color: #eb6100;
+}
+
+.search_button:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.search_button {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.search_button {
+  border-radius: 50%;
+  line-height: 45px;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+}
+
+input[type="text"]::first-letter,
+textarea::first-letter {
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+input[type="text"],
+textarea {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }

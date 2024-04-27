@@ -36,6 +36,10 @@ class Post extends Model
     public function weeks(){
         return $this->hasMany(Week::class);
     }
+    
+    public function buy_lists(){
+        return $this->hasMany(BuyList::class);
+    }
         
     public function user(){
         return $this->belongsTo(User::class);
