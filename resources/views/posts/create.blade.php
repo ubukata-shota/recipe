@@ -71,12 +71,6 @@
                         <h2>参考リンク</h2>
                         <input class="reference" type="text" name="post[reference]" placeholder="URLを入力">
                     </div>
-                    
-                    <div class="date input">
-                        <h2>作る日</h2>
-                        <input type="date" name="week[date]">
-                    </div>
-                    
                     <input class="button common" type="submit" value="投稿">
                 </form>
                 

@@ -32,13 +32,15 @@
                 
                 <br>
                 @foreach($weeks as $dish)
-                    @if($dish->post && $dish->post->id && $day == $dish->date)
-                        <input type="checkbox" value="{{ $dish->post->id }}" name="buy_list[]">
-                        {{ $day }}
-                        <br>
-                        <h2 class="post_title">{{ $dish->post->title }}</h2>
-                        @if($dish->post->image != null)
-                            <img class="image" src="{{ asset( $dish->post->image) }}" alt="Post Image">
+                    @if($dish->user_id == Auth::user()->id)
+                        @if($dish->post && $dish->post->id && $day == $dish->date)
+                            <input type="checkbox" value="{{ $dish->post->id }}" name="buy_list[]">
+                            {{ $day }}
+                            <br>
+                            <h2 class="post_title">{{ $dish->post->title }}</h2>
+                            @if($dish->post->image != null)
+                                <img class="image" src="{{ asset( $dish->post->image) }}" alt="Post Image">
+                            @endif
                         @endif
                     @endif
                 @endforeach

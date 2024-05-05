@@ -200,6 +200,29 @@ textarea {
 }
 
 .list {
-    margin-bottom:1000px;
+    margin-bottom:700px;
 }
 
+.content {
+    border-bottom: 1px dashed #FFA000;
+    display: flex;
+}
+
+.price {
+    margin-top:10px;
+    position: absolute;
+    right: 5px;
+}
+
+.sum_price {
+    font-weight: bold;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, #ff6000 70%);
+}
+
+.make_list_button {
+    margin-top: 30px;
+}
+
+.some_button {
+    display: flex;
+}
