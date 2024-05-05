@@ -85,13 +85,6 @@ class PostController extends Controller
             }
         }
         
-        $input_date = $request['week'];
-        $week->fill($input_date)->save();
-        $week->post()->associate($post);
-        $user_id = Auth::user()->id;
-        $week->user_id = $user_id;
-        $week->save();
-        
         $post->user()->associate($user_id = auth()->id());
         $post->save();
         return redirect('/posts/' . $post->id);
@@ -145,15 +138,6 @@ class PostController extends Controller
             $ingredient->post_id = $post->id;
             $ingredient->save();
         }
-        //日付の変更
-        $week = Week::where('post_id', $post->id)->first();
-        $input_date = $request->input('week');
-        $week->date = $input_date['date'];
-        
-        $user_id = Auth::user()->id;
-        $week->user_id = $user_id;
-        
-        $week->save();
         
         return redirect('/posts/' . $post->id);
     }
@@ -181,13 +165,16 @@ class PostController extends Controller
     
     public function storelist(Request $request, Post $post)
     {   
-        BuyList::truncate();
+        $user_id = Auth::user()->id;
+        BuyList::where('user_id', $user_id)->delete();
         
         if ($request->has('buy_list')) {
         $input_buy_list = $request->buy_list;
             foreach ($input_buy_list as $id) {
                 $buy_list = new BuyList();
                 $buy_list->post_id = $id;
+                $user_id = Auth::user()->id;
+                $buy_list->user_id = $user_id;
                 $buy_list->save();
             }
         }

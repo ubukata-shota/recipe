@@ -22,7 +22,7 @@
         <br>
         <div class="some_input">
             <form class="search_title" action="{{ route('search') }}" method="GET">
-                <input type="text" name="post[title]" placeholder="タイトルで検索">
+                <input type="text" name="post[title]" placeholder="レシピを検索">
                 <button class="search_button" type="submit">検索</button>
             </form>
         </div>
@@ -34,7 +34,7 @@
                 <!--タイトル表示-->
                 <div class="title">
                     <a href="/posts/{{ $post->id }}">
-                        <h1 class='title'>『{{ $post->title }}』</h2>
+                        <h1 class='title post_title'>『{{ $post->title }}』</h1>
                     </a>
                     @if($post->user)
                         <p class="user">作った人：{{ $post->user->name }}</p>
@@ -50,13 +50,13 @@
                         @endif
                     </a>
                 </div>
+                <div class="index_line"></div>
             @endforeach
         </div>
         <!--<div class="footer">-->
             
         <!--</div>-->
-        <div class='paginate'>{{ $posts->links() }}</div>
-        </div>
+        <div class='pagination'>{{ $posts->links() }}</div>
     </body>
     </x-app-layout>
 </html>

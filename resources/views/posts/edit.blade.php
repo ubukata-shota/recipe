@@ -69,16 +69,6 @@
                 <h2>参考リンク</h2>
                 <input type="text" name="post[reference]" placeholder="URLを入力" value={{ $post->reference }}>
             </div>
-            
-            <div class="date input">
-                <h2>作る日</h2>
-                <?php 
-                //$dateにweeksテーブルの$postのidと一致するpost_idを見つけ出し、そのレコードのdateを代入する
-                $date = $week->where('post_id', $post->id)->value('date');
-                ?>
-                <input type="date" name="week[date]" value="{{ $date }}">
-            </div>
-            
             <input class="button common" type="submit" value="更新する">
         </form>
         
