@@ -36,7 +36,7 @@
                 @if($post->image == null)
                     <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                 @else
-                    <img src="{{ asset( $post->image) }}" alt="Post Image">
+                    <img src="{{ $post->image }}" alt="Post Image">
                 @endif
             </div>
             

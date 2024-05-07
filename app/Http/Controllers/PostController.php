@@ -11,13 +11,32 @@ use App\Models\Ingredient;
 use App\Models\BuyList;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Auth;
+use Cloudinary;
 
 class PostController extends Controller
 {
     public function index(Post $post, Category $category)
     {
+        // クライアントインスタンス生成
+        $client = new \GuzzleHttp\Client();
+
+        // GET通信するURL
+        $url = 'https://teratail.com/api/v1/questions';
+
+        // リクエスト送信と返却データの取得
+        // Bearerトークンにアクセストークンを指定して認証を行う
+        $response = $client->request(
+            'GET',
+            $url,
+            ['Bearer' => config('services.teratail.token')]
+        );
+        
+        // API通信で取得したデータはjson形式なので
+        // PHPファイルに対応した連想配列にデコードする
+        $questions = json_decode($response->getBody(), true);
+        
         $user = User::all();
-        return view('posts.index')->with(['posts' => $post->getPaginateByLimit()], ['category' => $category]);
+        return view('posts.index')->with(['posts' => $post->getPaginateByLimit(), 'category' => $category, 'questions' => $questions['questions'],]);
     }
     
     public function show(Post $post, Category $category)
@@ -39,10 +58,15 @@ class PostController extends Controller
         // 画像のパスを取得
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $img = $image->store('public');
+            
+            // $img = $image->store('public');
+            $img = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
             
             $input_post = $request['post'];
-            $input_post['image'] = str_replace('public', 'storage', $img);
+            
+            // $input_post['image'] = str_replace('public', 'storage', $img);
+            $input_post  += ['image' => $img];
+            
             $post->fill($input_post)->save();
         } else {
             $post->fill($request['post'])->save();

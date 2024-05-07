@@ -42,7 +42,7 @@
                                     @if($day1->post->image == null)
                                         <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
-                                        <img src="{{ asset( $day1->post->image) }}" alt="Post Image">
+                                        <img src="{{ $day1->post->image }}" alt="Post Image">
                                     @endif
                                 </div>
                             </a>
@@ -81,7 +81,7 @@
                                     @if($day2->post->image == null)
                                         <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
-                                        <img src="{{ asset( $day2->post->image) }}" alt="Post Image">
+                                        <img src="{{ $day2->post->image }}" alt="Post Image">
                                     @endif
                                 </div>
                             </a>
@@ -120,7 +120,7 @@
                                     @if($day3->post->image == null)
                                         <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
-                                        <img src="{{ asset( $day3->post->image) }}" alt="Post Image">
+                                        <img src="{{ $day3->post->image }}" alt="Post Image">
                                     @endif
                                 </div>
                             </a>
@@ -159,7 +159,7 @@
                                     @if($day4->post->image == null)
                                         <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
-                                        <img src="{{ asset( $day4->post->image) }}" alt="Post Image">
+                                        <img src="{{ $day4->post->image }}" alt="Post Image">
                                     @endif
                                 </div>
                             </a>
@@ -199,7 +199,7 @@
                                     @if($day5->post->image == null)
                                         <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
-                                        <img src="{{ asset( $day5->post->image) }}" alt="Post Image">
+                                        <img src="{{ $day5->post->image }}" alt="Post Image">
                                     @endif
                                 </div>
                             </a>
@@ -238,7 +238,7 @@
                                     @if($day6->post->image == null)
                                         <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
-                                        <img src="{{ asset( $day6->post->image) }}" alt="Post Image">
+                                        <img src="{{ $day6->post->image }}" alt="Post Image">
                                     @endif
                                 </div>
                             </a>
@@ -277,7 +277,7 @@
                                     @if($day7->post->image == null)
                                         <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
-                                        <img src="{{ asset( $day7->post->image) }}" alt="Post Image">
+                                        <img src="{{ $day7->post->image }}" alt="Post Image">
                                     @endif
                                 </div>
                             </a>
