@@ -40,7 +40,7 @@
                             <a href="/posts/{{ $day1->post->id }}">
                                 <div class="image_week">
                                     @if($day1->post->image == null)
-                                        <img src="{{ asset( "storage//jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
+                                        <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
                                         <img src="{{ asset( $day1->post->image) }}" alt="Post Image">
                                     @endif
@@ -79,7 +79,7 @@
                             <a href="/posts/{{ $day2->post->id }}">
                                 <div class="image">
                                     @if($day2->post->image == null)
-                                        <img src="{{ asset( "storage//jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
+                                        <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
                                         <img src="{{ asset( $day2->post->image) }}" alt="Post Image">
                                     @endif
@@ -118,7 +118,7 @@
                             <a href="/posts/{{ $day3->post->id }}">
                                 <div class="image">
                                     @if($day3->post->image == null)
-                                        <img src="{{ asset( "storage//jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
+                                        <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
                                         <img src="{{ asset( $day3->post->image) }}" alt="Post Image">
                                     @endif
@@ -157,7 +157,7 @@
                             <a href="/posts/{{ $day4->post->id }}">
                                 <div class="image">
                                     @if($day4->post->image == null)
-                                        <img src="{{ asset( "storage//jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
+                                        <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
                                         <img src="{{ asset( $day4->post->image) }}" alt="Post Image">
                                     @endif
@@ -197,7 +197,7 @@
                             <a href="/posts/{{ $day5->post->id }}">
                                 <div class="image">
                                     @if($day5->post->image == null)
-                                        <img src="{{ asset( "storage//jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
+                                        <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
                                         <img src="{{ asset( $day5->post->image) }}" alt="Post Image">
                                     @endif
@@ -236,7 +236,7 @@
                             <a href="/posts/{{ $day6->post->id }}">
                                 <div class="image">
                                     @if($day6->post->image == null)
-                                        <img src="{{ asset( "storage//jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
+                                        <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
                                         <img src="{{ asset( $day6->post->image) }}" alt="Post Image">
                                     @endif
@@ -275,7 +275,7 @@
                             <a href="/posts/{{ $day7->post->id }}">
                                 <div class="image">
                                     @if($day7->post->image == null)
-                                        <img src="{{ asset( "storage//jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
+                                        <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
                                     @else
                                         <img src="{{ asset( $day7->post->image) }}" alt="Post Image">
                                     @endif
