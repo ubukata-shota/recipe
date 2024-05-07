@@ -21,15 +21,14 @@
 }
 
 .no_result {
-    max-width: 150px; /* 画像の最大幅を指定 */
-    max-height: 150px; /* 画像の最大高さを指定 */
-    display: block; /* 画像をブロック要素として扱います */
-    margin: 0 auto; /* 左右のマージンを自動で調整して中央に配置します */
+    max-width: 150px;
+    max-height: 150px;
+    display: block;
+    margin: 0 auto;
 }
 
 input[type="text"] {
-        background-color: #f2f2f2; /* 好きな色に変更してください */
-        /* その他のスタイルを追加できます */
+        background-color: #f2f2f2;
 }
 
 .image {
@@ -199,11 +198,11 @@ textarea {
 }
 
 .day {
-    color: red; /* 日の色を好きな色に変更してください */
+    color: red;
 }
 
 .index_line {
-    margin-top: 10px; /* 上部に余白を追加 */
+    margin-top: 10px;
     border-bottom: 2px dashed #e69f0f;
     margin-right: 20px;
     margin-left: 20px;
