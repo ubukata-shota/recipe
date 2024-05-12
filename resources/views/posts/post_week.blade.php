@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         
-        <title>レシピ投稿アプリ（仮名）</title>
+        <title>献立表に追加</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
