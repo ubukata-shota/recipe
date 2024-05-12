@@ -29,7 +29,7 @@
             
             <div class="user">
                 @if($post->user)
-                    <p class="user">作った人：{{ $post->user->name }}</p>
+                    <p class="user">作成者：{{ $post->user->name }}</p>
                 @endif
             </div>
             
@@ -96,7 +96,7 @@
             
             <div class="button-container">
                 <div class='post_week'>
-                    <a class="button return_button" href="/posts/{{ $post->id }}/menu">献立に追加️</a>
+                    <a class="button" href="/posts/{{ $post->id }}/menu">献立に追加️</a>
                 </div>
                 
                 @if( $post->user->id == Auth::user()->id)

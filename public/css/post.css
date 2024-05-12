@@ -31,6 +31,7 @@
 .input {
     margin-left: 20px;
     margin-top: 20px;
+    font-family: "Kokoro";
 }
 
 textarea {
@@ -123,19 +124,19 @@ textarea {
 
 .ribbon1 {
   position: absolute;
-  top: -20px; /* リボンを上にずらす */
+  top: -20px;
   left: 20px;
   display: inline-block;
-  height: 40px; /* リボンの高さ */
-  line-height: 40px; /* リボンの高さ */
+  height: 40px;
+  line-height: 40px; 
   text-align: center;
   font-weight: bold;
-  padding: 0 20px; /* 横の大きさ */
-  font-size: 16px; /* 文字の大きさ */
-  background: #e69f0f; /* 塗りつぶし色 */
-  color: black; /* 文字色 */
+  padding: 0 20px;
+  font-size: 16px;
+  background: #e69f0f;
+  color: black;
   box-sizing: border-box;
-  z-index: 2; /* リボンをテキストの上に配置 */
+  z-index: 2;
 }
 
 
@@ -154,7 +155,7 @@ textarea {
   left: 0;
   border: none;
   border-bottom: solid 10px transparent;
-  border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+  border-right: solid 20px rgb(149, 158, 155);
 }
 
 .ribbon1:after {
@@ -164,7 +165,7 @@ textarea {
   right: 0;
   border: none;
   border-bottom: solid 10px transparent;
-  border-left: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+  border-left: solid 20px rgb(149, 158, 155);
 }
 
 .box25 {
@@ -172,9 +173,8 @@ textarea {
   background: #fff0cd;
   box-shadow: 0px 0px 0px 5px #fff0cd;
   border: dashed 2px #e69f0f;
-  width: 90%; /* 幅を画面の70%に設定 */
-  margin: 20px auto; /* 上下のマージンを追加して中央に配置 */
-  padding: 40px 0.5em 0.2em; /* 上部にリボンの高さ分の余白を追加 */
+  margin: 20px auto;
+  padding: 40px 0.5em 0.2em;
   color: #454545;
   margin-top:30px;
   margin-bottom:50px;
@@ -227,7 +227,8 @@ textarea {
 }
 
 .make_list_button {
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .some_button {
@@ -293,3 +294,12 @@ textarea {
   color: #FFF;
 }
 
+textarea {
+  float: left;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid #1b2538;
+  border-radius: 4px;
+  background: darken(#f9f9f9, 10%);
+}

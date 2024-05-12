@@ -8,6 +8,7 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+        <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
         
     </head>
     
@@ -41,7 +42,7 @@
                 <p class="category__error" style="color:red">{{ $errors->first('category') }}</p>
             </div>
             
-            <h2 class="input">必要な材料 <span class="alert">※色がついている部分は半角数字で入力してください<</span>//h2>
+            <h2 class="input">必要な材料 <span class="alert">※色がついている部分は半角数字で入力してください<</span></2>
             <div class="ingredient_content" id="ingredient">
             @foreach($ingredients as $index => $ingredient)
                 @if($ingredient->post_id == $post->id)
