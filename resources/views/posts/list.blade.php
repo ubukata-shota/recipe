@@ -11,7 +11,7 @@
     <x-app-layout>
     <x-slot name="header">
         <div class="header">
-        　<p>～買い物リスト～</p>
+        　<p>買い物リスト</p>
         </div>
     </x-slot>
     

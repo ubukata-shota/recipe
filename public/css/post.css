@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 .pattern  {
     background-color: rgba(255, 208, 15, 0.34);
     background-image:
@@ -51,12 +52,16 @@ textarea {
     text-align: center; /* テキストボックスとボタンを中央に配置する */
     
 }
-
+.ingredient_container {
+    display: flex;
+    align-items: center;
+}
 
 .ingredient_container input[type="text"],
 .ingredient_container input[type="number"] {
     width: 130px; /* インプットの幅を調整 */
     margin-right: 5px; /* インプット間の間隔を調整 */
+    flex:1;
 }
 
 .ingredient_text {
@@ -74,7 +79,7 @@ textarea {
 
 .button {
     position: relative;
-    display: inline-block;
+    display: block;
     font-weight: bold;
     padding: 8px 10px 5px 10px;
     text-decoration: none;
@@ -84,6 +89,8 @@ textarea {
     border-radius: 15px;
     transition: .4s;
     margin:10px 20px 20px 10px;
+    margin: 10px auto;
+    width: fit-content;
 }
 
 .button:hover {
@@ -226,3 +233,63 @@ textarea {
 .some_button {
     display: flex;
 }
+
+.cp_iptxt {
+    display: flex;
+	width: 100%;
+	margin: 10px 3%;
+	align-items: center;
+}
+.cp_iptxt input[type='text'], input[type='number'] {
+    flex: 1;
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	border: 1px solid #1b2538;
+	border-radius: 4px;
+}
+
+.ef input[type='text']:focus,
+.ef input[type='number']:focus{
+    
+	border: 1px solid #da3c41;
+	outline: none;
+	box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
+}
+
+.cp_iptxt input[type='number'] {
+    background-color: rgba(220, 162, 95, 0.4);
+}
+
+.alert {
+    font-size: 13px;
+}
+
+.must {
+    color: red;
+}
+
+.post_button {
+    background: rgb(210, 211, 255);
+    color: rgba(58, 58, 207, 0.75);
+    border-bottom: solid 4px rgba(58, 58, 207, 0.75);
+}
+
+.post_button:hover {
+  background: rgba(58, 58, 207, 0.75);
+  color: #FFF;
+}
+
+.return_button {
+    background-color: #969a98;
+    color: black;
+    border-bottom: solid 4px black;
+}
+
+.return_button:hover {
+  background: #5e5f5f;
+  color: #FFF;
+}
+

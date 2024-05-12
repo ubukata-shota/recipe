@@ -6,12 +6,13 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+        <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
     </head>
     
     <x-app-layout>
     <x-slot name="header">
         <div class="header">
-        　<p>～レシピ一覧～</p>
+        　<p>レシピ一覧</p>
         </div>
     </x-slot>
     
@@ -38,14 +39,14 @@
                         <h1 class='title post_title'>『{{ $post->title }}』</h1>
                     </a>
                     @if($post->user)
-                        <p class="user">作った人：{{ $post->user->name }}</p>
+                        <p class="user">作成者：{{ $post->user->name }}</p>
                     @endif
                 </div>
                 <!--写真表示-->
                 <div class="image">
                     <a href="/posts/{{ $post->id }}">
                         @if($post->image == null)
-                            <img src="{{ asset( "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" ) }}" alt="Post Image">
+                            <img src="{{ "/jsI3pr0bNdUS1HypyALxx1uM7hHi2Sj6I6NltBUs.jpg" }}" alt="Post Image">
                         @else
                             <img src="{{ $post->image }}" alt="Post Image">
                         @endif

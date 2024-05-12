@@ -24,6 +24,9 @@ Route::get('/posts/{post}/menu', [PostController::class, 'menu'])->name('menu');
 Route::post('/posts/{post}/menu', [PostController::class, 'storemenu'])->name('storemenu');
 Route::delete('/weeks/{id}', [PostController::class, 'deleteWeek'])->name('weeks.delete');
 
+Route::post('/up_week_count', [PostController::class, 'up_week_count'])->name('up_week_count');
+Route::post('/down_week_count', [PostController::class, 'down_week_count'])->name('down_week_count');
+
 //以上自分で書いたコード
 
 Route::get('/dashboard', function () {

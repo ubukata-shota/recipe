@@ -63,6 +63,7 @@ h1 {
     background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, #e69f0f 70%);
     text-decoration: underline;
     text-decoration-color: #e69f0f;
+    font-family: "Hannari";
 }
 
 .title {
@@ -207,3 +208,40 @@ textarea {
     margin-right: 20px;
     margin-left: 20px;
 }
+
+.top_date {
+    margin-top: 20px;
+}
+
+.bottom {
+    margin-bottom: 20px;
+}
+
+
+.move_week {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.move_week_button {
+    background-color: #969a98;;
+    color: black;
+    border-bottom: solid 4px black;
+}
+
+.move_week_button:hover {
+  background: #5e5f5f;
+  color: #FFF;
+}
+
+.today::before {
+        content: "●"; /* マーカーとして利用する文字やアイコンなど */
+        color: red; /* マーカーの色 */
+        margin-right: 5px; /* マーカーとテキストの間隔 */
+    }
+    
+.not_today::before {
+        content: "●"; /* マーカーとして利用する文字やアイコンなど */
+        color: gray; /* マーカーの色 */
+        margin-right: 5px; /* マーカーとテキストの間隔 */
+    }

@@ -114,13 +114,6 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
     
-    public function week()
-    {
-        $post = Post::all();
-        $week = Week::all();
-        return view('posts.week')->with(['posts' => $post, 'weeks' => $week]);
-    }
-    
     public function edit(Post $post, Week $week)
     {
         $ingredient = Ingredient::all();
@@ -244,5 +237,32 @@ class PostController extends Controller
     {
         Week::destroy($id);
         return redirect('/week');
+    }
+    
+    public function week()
+    {
+        $post = Post::all();
+        $week = Week::all();
+        session()->forget('week_count'); // week_count の値を削除
+        $week_count = 0;
+        return view('posts.week')->with(['week_count'=> $week_count, 'posts' => $post, 'weeks' => $week]);
+    }
+    
+    public function up_week_count()
+    {
+        $post = Post::all();
+        $week = Week::all();
+        $week_count = session('week_count', 0) + 7; // セッションから値を取得し、1を加える
+        session(['week_count' => $week_count]); // セッションに新しい値を保存
+        return view('posts.week')->with(['week_count'=> $week_count, 'posts' => $post, 'weeks' => $week]); // ビューに変数を渡す
+    }
+    
+    public function down_week_count()
+    {
+        $post = Post::all();
+        $week = Week::all();
+        $week_count = session('week_count', 0) - 7; // セッションから値を取得し、1を減らす
+        session(['week_count' => $week_count]); // セッションに新しい値を保存
+        return view('posts.week')->with(['week_count'=> $week_count, 'posts' => $post, 'weeks' => $week]); // ビューに変数を渡す
     }
 }
