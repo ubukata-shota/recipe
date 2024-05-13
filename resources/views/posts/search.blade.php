@@ -32,12 +32,15 @@
             
             <ul>
                 @foreach($posts as $post)
-                    <!--タイトル表示-->
+                <!--タイトル表示-->
                 <div class="title">
                     <a href="/posts/{{ $post->id }}">
                         <h1 class='title'>『{{ $post->title }}』</h2>
                     </a>
+                    <p class="user">作成者：{{ $post->user->name }}</p>
                 </div>
+                
+                
                 <!--写真表示-->
                 <div class="image">
                     <a href="/posts/{{ $post->id }}">

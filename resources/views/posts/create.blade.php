@@ -36,18 +36,18 @@
                         <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
                     </div>
                     
-                    <div class="input">
-                        <h2><span class="must">*</span>カテゴリー</h2>
+                    <div>
+                        <h2 class="input"><span class="must">*</span>カテゴリー</h2>
                         @foreach($categories as $category)
                             <label>
-                                <input type="radio" value="{{ $category->id }}" name="category" {{ old('category') == $category->id ? 'checked' : '' }}>
+                                <input class="view_categories" type="radio" value="{{ $category->id }}" name="category" {{ old('category') == $category->id ? 'checked' : '' }}>
                                 {{ $category->name }}
                             </label>
                         @endforeach
                         <p class="category__error" style="color:red">{{ $errors->first('category') }}</p>
                     </div>
                     
-                    <h2 class="input">必要な材料 <span class="alert">※色がついている部分は半角数字で入力してください<</span></h2>
+                    <h2 class="input">必要な材料 <span class="alert">※色がついている部分は半角数字で入力してください</span></h2>
                     <div class="ingredient_content" id="ingredient">
                         <div id="ingredient1" class="ingredient_container cp_iptxt">
                             <label class="ef">

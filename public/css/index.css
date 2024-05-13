@@ -28,23 +28,38 @@
 }
 
 input[type="text"] {
-        background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .image {
-    margin: 0 auto;
-    width: 75%;
-    height: 350px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 70%; 
+    height: 350px; 
+    overflow: hidden; 
+    margin: 0 auto 10px;
+    position: relative;
 }
 
 .image img {
-    max-width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+.image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
 .image_week {
     margin: 0 auto;
     overflow: hidden;
@@ -93,6 +108,12 @@ h1 {
     margin-right: 10px;
 }
 
+.post_button {
+    background: rgb(210, 211, 255);
+    color: rgba(58, 58, 207, 0.75);
+    border-bottom: solid 4px rgba(58, 58, 207, 0.75);
+}
+
 .delete {
     text-align: center;
     margin-bottom: 20px;
@@ -101,6 +122,22 @@ h1 {
 .button:hover {
   background: #ffc25c;
   color: #FFF;
+}
+
+.post_button:hover {
+  background: rgba(58, 58, 207, 0.75);
+  color: #FFF;
+}
+
+.return_button:hover {
+  background: #5e5f5f;
+  color: #FFF;
+}
+
+.return_button {
+    background-color: #969a98;
+    color: black;
+    border-bottom: solid 4px black;
 }
 
 .footer {
@@ -118,12 +155,22 @@ h1 {
 
 .search_button {
     color: #fff;
-  background-color: #eb6100;
+    background-color: #eb6100;
 }
 
 .search_button:hover {
   color: #fff;
   background: #f56500;
+}
+
+.delete_button { 
+    color: red;
+    border-bottom: solid 4px red;
+}
+
+.delete_button:hover {
+  background: rgba(240, 55, 55, 0.83);
+  color: #FFF;
 }
 
 .search_button {
@@ -235,13 +282,93 @@ textarea {
 }
 
 .today::before {
-        content: "●"; /* マーカーとして利用する文字やアイコンなど */
-        color: red; /* マーカーの色 */
-        margin-right: 5px; /* マーカーとテキストの間隔 */
-    }
+    content: "●"; 
+    color: red; 
+    margin-right: 5px;
+}
     
 .not_today::before {
-        content: "●"; /* マーカーとして利用する文字やアイコンなど */
-        color: gray; /* マーカーの色 */
-        margin-right: 5px; /* マーカーとテキストの間隔 */
-    }
+    content: "●";
+    color: gray;
+    margin-right: 5px;
+}
+    
+.add_list {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buy_list_image {
+    margin: 5px 20px 0px 20px;
+    border: 2px dashed #e69f0f;
+}
+
+.ECM_CheckboxInput {
+  padding: 12px 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.ECM_CheckboxInput-Input {
+  margin: 0;
+  width: 0;
+  opacity: 0;
+}
+
+
+.ECM_CheckboxInput-Input:checked + .ECM_CheckboxInput-DummyInput {
+  background: #e69f0f;
+}
+.ECM_CheckboxInput-Input:checked + .ECM_CheckboxInput-DummyInput::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 4px;
+  border-radius: 2px;
+  transform: translate(-6px, 5px) rotateZ(-135deg);
+  transform-origin: 2px 2px;
+  background: #FFFFFF;
+}
+.ECM_CheckboxInput-Input:checked + .ECM_CheckboxInput-DummyInput::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76%;
+  height: 4px;
+  border-radius: 2px;
+  transform: translate(-6px, 5px) rotateZ(-45deg);
+  transform-origin: 2px 2px;
+  background: #FFFFFF;
+}
+.ECM_CheckboxInput-DummyInput {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: rgba(0,0,0, .1);
+  border-radius: 4px;
+}
+.ECM_CheckboxInput-LabelText {
+  margin-left: 12px;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.announcement {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.focus{
+    color:red;
+}

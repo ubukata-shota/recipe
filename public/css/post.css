@@ -30,8 +30,9 @@
 
 .input {
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
     font-family: "Kokoro";
+    font-weight: bold;
 }
 
 textarea {
@@ -102,8 +103,8 @@ textarea {
 .delete { 
     color: red;
     border-bottom: solid 4px red;
+    margin: 10px 30px 10px 0px;
 }
-
 
 .add_button {
     display: flex;
@@ -294,6 +295,11 @@ textarea {
   color: #FFF;
 }
 
+.delete:hover {
+  background: rgba(240, 55, 55, 0.83);
+  color: #FFF;
+}
+
 textarea {
   float: left;
   max-width: 100%;
@@ -302,4 +308,8 @@ textarea {
   border: 1px solid #1b2538;
   border-radius: 4px;
   background: darken(#f9f9f9, 10%);
+}
+
+.view_categories {
+    margin-left: 20px;
 }

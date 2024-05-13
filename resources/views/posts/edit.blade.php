@@ -24,11 +24,11 @@
             @method("PUT")
             
             <!--以下入力項目-->
-            <h2 class="input">写真を投稿する</h2>
+            <h2 class="input">写真を投稿</h2>
             <input class="input_image" type="file" name="image" value="{{ old('post.image', $post->image) }}">
             
+            <h2 class="input"><span class="must">*</span>料理名</h2>
             <div class="title">
-                <h2><span class="must">*</span>料理名</h2>
                 <input type="text" name=post[title] placeholder="料理名を入力" value="{{ old('post.title', $post->title) }}">
                 <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
             </div>
@@ -42,7 +42,7 @@
                 <p class="category__error" style="color:red">{{ $errors->first('category') }}</p>
             </div>
             
-            <h2 class="input">必要な材料 <span class="alert">※色がついている部分は半角数字で入力してください<</span></2>
+            <h2 class="input">必要な材料 <span class="alert">※色がついている部分は半角数字で入力してください</span></2>
             <div class="ingredient_content" id="ingredient">
             @foreach($ingredients as $index => $ingredient)
                 @if($ingredient->post_id == $post->id)
@@ -69,7 +69,7 @@
                 <p class="make__error" style="color:red">{{ $errors->first('post.make') }}</p>
             </div>
             
-            <h2>参考リンク</h2>
+            <h2 class="input">参考リンク</h2>
             <div class="reference input cp_iptxt">
                 <label class="ef">
                     <input class="link" type="text" name="post[reference]" placeholder="URLを入力" value={{ $post->reference }}>

@@ -24,6 +24,10 @@ h1 {
     justify-content: center;
 }
 
+.post_title {
+    font-family: "Hannari";
+}
+
 .user {
     text-align: center;
     font-weight: bold;
@@ -94,6 +98,11 @@ h1 {
 .button_delete { 
     color: red;
     border-bottom: solid 4px red;
+}
+
+.button_delete:hover {
+  background: rgba(240, 55, 55, 0.83);
+  color: #FFF;
 }
 
 .ribbon1 {
@@ -191,4 +200,9 @@ h1 {
     background-color: #969a98;
     color: black;
     border-bottom: solid 4px black;
+}
+
+.return_button:hover {
+  background: #5e5f5f;
+  color: #FFF;
 }

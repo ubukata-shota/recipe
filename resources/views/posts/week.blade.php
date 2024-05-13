@@ -11,7 +11,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="header">
-            <p>一週間の献立</p>
+        　<p>一週間の献立</p>
         </div>
     </x-slot>
     <body class="antialiased">
@@ -75,7 +75,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <div class='delete'>
-                                    <button class="button button_delete" type="submit" onclick="deleteWeek({{ $day->id }})">削除する</button>
+                                    <button class="button delete_button" type="submit" onclick="deleteWeek({{ $day->id }})">削除する</button>
                                 </div>
                             </form>
                         @endif
