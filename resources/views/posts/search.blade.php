@@ -56,7 +56,6 @@
         @endif
 
 <!-- ページネーションリンク -->
-{{ $posts->links() }}
         <!--<div class="footer">-->
             
         <!--</div>-->
