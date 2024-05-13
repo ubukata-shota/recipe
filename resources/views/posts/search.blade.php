@@ -52,7 +52,7 @@
             </ul>
         @else
             <p class="result">検索結果はありません。</p>
-            <img class="no_result" src="{{ asset( "storage/WStqSD6FwTUe2xCssDUoiXUmdjA94mHUMGDP3LdR.png" ) }}" alt="Post Image">
+            <img class="no_result" src="{{ "storage/WStqSD6FwTUe2xCssDUoiXUmdjA94mHUMGDP3LdR.png" }}" alt="Post Image">
         @endif
 
 <!-- ページネーションリンク -->
