@@ -124,17 +124,23 @@ class PostController extends Controller
     
     public function update(PostRequest $request, Post $post)
     {
-        //投稿内容の編集
+        // 画像のパスを取得
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $img = $image->store('public');
+            
+            // $img = $image->store('public');
+            $img = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
             
             $input_post = $request['post'];
-            $input_post['image'] = str_replace('public', 'storage', $img);
+            
+            // $input_post['image'] = str_replace('public', 'storage', $img);
+            $input_post  += ['image' => $img];
+            
             $post->fill($input_post)->save();
         } else {
             $post->fill($request['post'])->save();
         }
+        
         $input_post = $request['post'];
         $post->fill($input_post)->save();
         //カテゴリーの編集
